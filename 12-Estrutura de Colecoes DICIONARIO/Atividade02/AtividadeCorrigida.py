@@ -58,6 +58,7 @@ try:
                     chave_escolhida = input("Informe o dado que deseja alterar: ").strip().lower()
                     if lista_de_pessoas[posicao_pessoa_alterar][chave_escolhida]:
                         novo_dado = input(f"Informe o novo valor: ")
+                        # altera o dado da chave escolhida
                         lista_de_pessoas[posicao_pessoa_alterar][chave_escolhida] = novo_dado
                         print(f"Registro alterado com sucesso!")
                         print("\n")

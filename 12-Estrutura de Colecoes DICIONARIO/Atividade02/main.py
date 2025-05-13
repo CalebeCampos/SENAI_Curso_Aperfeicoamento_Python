@@ -35,16 +35,13 @@ try:
         match opcao_crud:
 
             case "1":
-                
+                os.system('cls')
                 for i in range(len(chaves)):
                     dados_pessoa[chaves[i]] = input(f"Infome o(a) {chaves[i]} da pessoa:  ").strip().title()
                     os.system('cls')
 
                 lista.append(dados_pessoa) # adiciona o dicionario pessoa na lista pessoas
-
-                os.system('cls')
                 print(f"Registro cadastrado com sucesso!\n")
-
                 continue
 
             case "2":
@@ -102,7 +99,7 @@ try:
                                     
                                 continue
                                 
-                            elif pessoa.get("nome") != nome_pessoa_encontrar:
+                            else:
                                 os.system('cls')
                                 print(f"Nao foi possivel encontrar o registro da pessoa {nome_pessoa_encontrar}!")
                                 break
