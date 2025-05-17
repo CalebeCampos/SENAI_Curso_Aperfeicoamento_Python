@@ -1,0 +1,18 @@
+"""
+Crie um programa onde o usuario faz um cadastro de uma conta em uma instituicao bancaria, e apos esse cadastro, o programa exibe o seguinte menu:
+0 - Sair
+1 - Criar conta bancaria
+2 - Consultar contas cadastradas
+3 - Alterar cadastro do titular da conta
+4 - Excluir conta
+5 - Sacar
+6 - Depositar
+7 - Consultar saldo
+    Dados do titular da conta:
+    nome
+    CPF
+    agencia (1010)
+    numero da conta (numero aleatorio)
+    saldo (iniciar com zero)
+obs: para gerar numero aleatorio da conta, usar a biblioteca random
+"""
