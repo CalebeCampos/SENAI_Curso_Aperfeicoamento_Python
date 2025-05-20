@@ -16,27 +16,27 @@ def cadastrar_conta(nome, cpf):
     }
     contas_cadastradas.append(conta)
 
+def validar_conta(indice_da_conta):
+    if indice_da_conta < 0 or indice_da_conta > len(contas_cadastradas):
+        return False
+    else:
+        return True
+
+def imprimir_conta(indice_da_conta):
+    for chave in contas_cadastradas[indice_da_conta]:
+        print(f"{chave}: {contas_cadastradas[indice_da_conta].get(chave)}")
+    print("\n")
+
 def listar_contas():
     if not contas_cadastradas:
         return print("Nenhuma conta cadastrada!\n")
-    else:        
+    else:
         os.system('cls')
         for conta in range(len(contas_cadastradas)):
             print(f"Posicao {conta}:")
-            for chave in contas_cadastradas[conta]:
-                print(f"{chave}: {contas_cadastradas[conta].get(chave)}")
+            imprimir_conta(conta)
             print("\n")
             
-def consultar_conta(indice_da_conta):
-    if indice_da_conta < 0 or indice_da_conta > len(contas_cadastradas):
-        return print("Conta nao encontrada!\n")
-    else:
-        os.system('cls')
-        print("Registro encontrado!\n")
-        for chave in contas_cadastradas[indice_da_conta]:
-            print(f"{chave}: {contas_cadastradas[indice_da_conta].get(chave)}")
-        print("\n")
-
 def alterar_nome_titular(indice_da_conta, novo_nome):
     if indice_da_conta < 0 or indice_da_conta > len(contas_cadastradas):
         return print("Conta nao encontrada!\n")
@@ -72,25 +72,25 @@ def sacar(indice_da_conta, valor):
     if indice_da_conta < 0 or indice_da_conta > len(contas_cadastradas):
         return print("Conta nao encontrada!\n")
     else:
-        if valor > 0 and valor <= contas_cadastradas[indice_da_conta].get("Saldo"):
+        if   valor < 0:
+            print("Valor invalido!\n")
+        elif valor == 0:
+            print("Informe um valor maior que zero!\n")
+        elif valor > contas_cadastradas[indice_da_conta].get("Saldo"):
+            print("Saldo insuficiente!\n")
+        elif valor > 0 and valor <= contas_cadastradas[indice_da_conta].get("Saldo"):
             contas_cadastradas[indice_da_conta]["Saldo"] -= valor
             novo_saldo = contas_cadastradas[indice_da_conta].get("Saldo")
             print(f"Valor R$ {valor} sacado com sucesso!")
             print(f"Seu novo saldo é R$ {novo_saldo}")
             print("Retire as cedulas da maquina...\n")
-        elif valor == 0:
-            print("Informe um valor maior que zero!\n")
         else:
-            print("Saldo insuficiente!\n")
-
+            print("Valor invalido!\n")
 
 def depositar(indice_da_conta, valor):
-    if indice_da_conta < 0 or indice_da_conta > len(contas_cadastradas):
-        return print("Conta nao encontrada!\n")
+    if valor > 0:
+        contas_cadastradas[indice_da_conta]["Saldo"] += valor
+        novo_saldo = contas_cadastradas[indice_da_conta]["Saldo"] + valor
+        return print(f"Valor R$ {valor} depositado com sucesso!\n")
     else:
-        if valor > 0:
-            contas_cadastradas[indice_da_conta]["Saldo"] += valor
-            novo_saldo = contas_cadastradas[indice_da_conta]["Saldo"] + valor
-            print(f"Valor R$ {valor} depositado com sucesso!\n")
-        else:
-            print("Informe um valor maior que zero!\n")
+        return print("Informe um valor maior que zero!\n")

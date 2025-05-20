@@ -21,3 +21,8 @@ def menu_saque():
     print("1 - Informar valor para saque")
     print("0 - Voltar ao menu principal")
     print("\n")
+
+def menu_deposito():
+    print("1 - Informar valor para deposito")
+    print("0 - Voltar ao menu principal")
+    print("\n")
