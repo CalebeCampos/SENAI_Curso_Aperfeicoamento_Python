@@ -6,7 +6,7 @@ import pyautogui as gui
 from datetime import datetime
 
 # Obtém a data de hoje no formato desejado
-data_hoje = datetime.now().strftime('%Y/%m/%d')
+data_hoje = datetime.now().strftime('%Y%m%d')
 
 gui.PAUSE = 0.5 # tempo de espera entre os comandos
 
@@ -15,14 +15,20 @@ gui.write('cmd')
 gui.press('enter')
 gui.write('cd C:\\Users\\ead\\Aperfeicoamento em python (Calebe Campos)')
 gui.press('enter')
+
+# remove as credenciais do git
 gui.write('git config --global --unset user.name')
 gui.press('enter')
 gui.write('git config --global --unset user.email')
 gui.press('enter')
+
+# adiciona as minhas credenciais do git
 gui.write('git config --global user.name "Calebe Campos"')
 gui.press('enter')
 gui.write('git config --global user.email "calebe_josue@hotmail.com"')
 gui.press('enter')
+
+# adicionar as alteracoes no unstaged e commita
 gui.write('git status')
 gui.press('enter')
 gui.write('git add .')
@@ -31,5 +37,13 @@ gui.write('git status')
 gui.press('enter')
 gui.write(f'git commit -m "arquivos criados até o dia {data_hoje}"')
 gui.press('enter')
+
+# envia o commit para o repositório remoto
 gui.write('git push')
+gui.press('enter')
+
+# remove as credenciais do git
+gui.write('git config --global --unset user.name')
+gui.press('enter')
+gui.write('git config --global --unset user.email')
 gui.press('enter')
