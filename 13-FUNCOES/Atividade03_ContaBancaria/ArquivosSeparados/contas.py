@@ -15,6 +15,8 @@ def cadastrar_conta(nome, cpf):
         "Saldo": 0.0
     }
     contas_cadastradas.append(conta)
+    print(f"Conta cadastrada com sucesso!")
+    print("\n")
 
 def validar_conta(indice_da_conta):
     if indice_da_conta < 0 or indice_da_conta > len(contas_cadastradas):
@@ -69,28 +71,26 @@ def consultar_saldo(indice_da_conta):
         print(f"SALDO: {contas_cadastradas[indice_da_conta].get("Saldo"):,.2f}\n")
 
 def sacar(indice_da_conta, valor):
-    if indice_da_conta < 0 or indice_da_conta > len(contas_cadastradas):
-        return print("Conta nao encontrada!\n")
+    if valor < 0:
+        return print("Valor invalido!\n")
+    elif valor == 0:
+        print("Informe um valor maior que zero!\n")
+    elif valor > contas_cadastradas[indice_da_conta].get("Saldo"):
+        print("Saldo insuficiente!\n")
+    elif valor > 0 and valor <= contas_cadastradas[indice_da_conta].get("Saldo"):
+        contas_cadastradas[indice_da_conta]["Saldo"] -= valor
+        novo_saldo = contas_cadastradas[indice_da_conta].get("Saldo")
+        print(f"Valor R$ {valor} sacado com sucesso!")
+        print(f"Seu novo saldo é R$ {novo_saldo}")
+        print("Retire as cedulas da maquina...\n")
     else:
-        if   valor < 0:
-            print("Valor invalido!\n")
-        elif valor == 0:
-            print("Informe um valor maior que zero!\n")
-        elif valor > contas_cadastradas[indice_da_conta].get("Saldo"):
-            print("Saldo insuficiente!\n")
-        elif valor > 0 and valor <= contas_cadastradas[indice_da_conta].get("Saldo"):
-            contas_cadastradas[indice_da_conta]["Saldo"] -= valor
-            novo_saldo = contas_cadastradas[indice_da_conta].get("Saldo")
-            print(f"Valor R$ {valor} sacado com sucesso!")
-            print(f"Seu novo saldo é R$ {novo_saldo}")
-            print("Retire as cedulas da maquina...\n")
-        else:
-            print("Valor invalido!\n")
+        print("Valor invalido!\n")
 
 def depositar(indice_da_conta, valor):
-    if valor > 0:
+    if valor < 0:
+        return print("Informe um valor maior que zero!\n")
+    else:
         contas_cadastradas[indice_da_conta]["Saldo"] += valor
         novo_saldo = contas_cadastradas[indice_da_conta]["Saldo"] + valor
-        return print(f"Valor R$ {valor} depositado com sucesso!\n")
-    else:
-        return print("Informe um valor maior que zero!\n")
+        print(f"Valor R$ {valor} depositado com sucesso!\n")
+        print(f"Seu novo saldo é R$ {novo_saldo}\n")

@@ -18,8 +18,6 @@ if __name__ == "__main__":
                     nome = input("Informe o nome do titular da conta: ").title()
                     cpf = input("Informe o CPF do titular da conta: ")
                     c.cadastrar_conta(nome, cpf)
-                    print(f"Conta cadastrada com sucesso!")
-                    print("\n")
                     continue
                 
                 # LISTAR CONTAS CADASTRADAS
@@ -32,8 +30,7 @@ if __name__ == "__main__":
                 case "3": 
                     os.system('cls')
                     indice_conta_alterar = int(input("Informe a posicao da conta que deseja alterar: "))
-
-                    if c.validar_conta(indice_conta_alterar) == True:
+                    if c.validar_conta(indice_conta_alterar):
                         c.imprimir_conta(indice_conta_alterar)
                         while True:
                             m.menu_alteracao_titular()
@@ -55,8 +52,6 @@ if __name__ == "__main__":
                                         continue
                     else:
                         print("Conta nao encontrada!")
-                        break
-
                     continue
                 
                 # EXCLUIR CONTA
@@ -68,14 +63,12 @@ if __name__ == "__main__":
                         c.excluir_conta(indice_conta_deletar)
                     else:
                         print("Conta nao encontrada!")
-                        break
                     continue
                 
                 # SACAR
                 case "5": 
                     os.system('cls')
                     indice_conta_sacar = int(input("Informe a posicao da conta que deseja sacar: "))
-
                     if c.validar_conta(indice_conta_sacar) == True:
                         c.imprimir_conta(indice_conta_sacar)                    
                         while True:
@@ -94,16 +87,13 @@ if __name__ == "__main__":
                                     continue
                     else:
                         print("Conta nao encontrada!")
-                        break
-
                     continue
 
                 case "6": # DEPOSITAR
                     os.system('cls')
                     indice_conta_depositar = int(input("Informe a posicao da conta que deseja depositar: "))
-
-                    if c.validar_conta(indice_conta_sacar) == True:
-                        c.imprimir_conta(indice_conta_sacar) 
+                    if c.validar_conta(indice_conta_depositar) == True:
+                        c.imprimir_conta(indice_conta_depositar) 
 
                         while True:
                             m.menu_deposito()
@@ -118,12 +108,8 @@ if __name__ == "__main__":
                                 case _:
                                     print("Opcao invalida!\n")
                                     continue
-                        continue
-
                     else:
-                        print("Conta nao encontrada!")
-                        break
-                    
+                        print("Conta nao encontrada!")                        
                     continue                           
 
                 case "7": # CONSULTAR SALDO
@@ -134,7 +120,6 @@ if __name__ == "__main__":
                         c.consultar_saldo(indice_conta_consultar_saldo)
                     else:
                         print("Conta nao encontrada!")
-                        break
                     continue
 
                 # SAIR
