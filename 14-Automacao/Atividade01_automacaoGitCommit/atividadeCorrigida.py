@@ -8,11 +8,10 @@ def limpar_credenciais():
 
 if __name__ == "__main__":
 
-    p.PAUSE = 0.5
-
     msg_commit = input('Digite a mensagem do commit: ')  # Solicita a mensagem do commit'
 
-    #p.hotkey('ctrl', 'j')  # Abre o terminal do visual Studio Code
+    p.PAUSE = 0.5   
+
     limpar_credenciais()  # Chama a função para limpar as credenciais
     p.write('git config --global user.name "CalebeCampos"')  # Adiciona o nome do usuário
     p.press('enter')  # Pressiona enter
@@ -20,7 +19,6 @@ if __name__ == "__main__":
     p.press('enter')  # Pressiona enter
     p.write('git add .')  
     p.press('enter')  # Pressiona entergit config --global --unset user.name
-
     p.write(f'git commit -m "{msg_commit}"')  # Adiciona a mensagem do commit
     p.press('enter')  # Pressiona enter
     p.write('git push')  # Adiciona o push
