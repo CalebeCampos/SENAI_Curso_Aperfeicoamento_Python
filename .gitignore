@@ -2,6 +2,6 @@
 13-FUNCOES/Atividade03_ContaBancaria/AtividadeCorrigida_Separados/__pycache__
 13-FUNCOES/Funcoes06_ArquivosDiferentes/__pycache__
 13-FUNCOES/Funcoes07_Yield/__pycache__
-13-FUNCOES/15-Executavel/ComoGerarExecutavel/build
-13-FUNCOES/15-Executavel/ComoGerarExecutavel/dist
-13-FUNCOES/15-Executavel/ComoGerarExecutavel/*.spec
+*/build
+*/dist
+*/*.spec
