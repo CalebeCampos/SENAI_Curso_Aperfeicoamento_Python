@@ -40,7 +40,9 @@ try:
     os.system('cls')
 
     print("Infome o peso do usuario: ")
-    peso = float(input("Peso: ").replace(',', '.'))
+    git add .
+    git status
+    git commit -m "arquivos criados at o dia 20250522"peso = float(input("Peso: ").replace(',', '.'))
     dicionario['peso'] = peso
     os.system('cls')
 
