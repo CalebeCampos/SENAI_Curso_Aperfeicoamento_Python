@@ -1,3 +1,4 @@
+.venv
 13-FUNCOES/Atividade03_ContaBancaria/ArquivosSeparados/__pycache__
 13-FUNCOES/Atividade03_ContaBancaria/AtividadeCorrigida_Separados/__pycache__
 13-FUNCOES/Funcoes06_ArquivosDiferentes/__pycache__
@@ -5,4 +6,4 @@
 */build
 */dist
 */*.spec
-.venv
+*/.ipynb_checkpoints

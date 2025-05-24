@@ -1,7 +1,6 @@
 import pyautogui as p
 from datetime import datetime
 
-
 def limpar_credenciais():
     p.write('git config --global --unset user.name')  # Remove o nome do usuário
     p.press('enter')  # Pressiona enter
@@ -10,12 +9,13 @@ def limpar_credenciais():
 
 if __name__ == "__main__":
 
-    # msg_commit = input('Digite a mensagem do commit: ')  # Solicita a mensagem do commit'
-    data_hoje = datetime.now().strftime('%Y%m%d')
+    p.PAUSE = 0.5  
 
-    p.PAUSE = 0.5   
+    # msg_commit = input('Digite a mensagem do commit: ')  # Solicita a mensagem do commit'
+    data_hoje = datetime.now().strftime('%Y%m%d')     
 
     limpar_credenciais()  # Chama a função para limpar as credenciais
+
     p.write('git config --global user.name "CalebeCampos"')  # Adiciona o nome do usuário
     p.press('enter')  # Pressiona enter
     p.write('git config --global user.email "calebe_josue@hotmail.com"')  # Adiciona o email do usuário
@@ -33,5 +33,5 @@ if __name__ == "__main__":
     p.press('enter')  # Pressiona enter
     p.write('git push')  # Adiciona o push
     p.press('enter')  # Pressiona enter
+
     limpar_credenciais()  # Chama a função para limpar as credenciais
-    
