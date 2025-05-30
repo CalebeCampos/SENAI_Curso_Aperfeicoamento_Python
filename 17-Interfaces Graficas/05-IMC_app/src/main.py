@@ -31,22 +31,22 @@ def main(page: ft.Page):
 
                 if   imc < 18.5:
                     diagnostico.value = "Você está abaixo do peso!"
-                    diagnostico.color = ft.Colors.BLACK # muda a cor do texto para vermelho se o IMC for menor que 18.5
+                    diagnostico.color = ft.Colors.BLUE # muda a cor do texto para vermelho se o IMC for menor que 18.5
                 elif imc < 25:
                     diagnostico.value = "Você está com peso normal!"
-                    diagnostico.color = ft.Colors.BLUE # muda a cor do texto para verde se o IMC for menor que 25
+                    diagnostico.color = ft.Colors.GREEN # muda a cor do texto para verde se o IMC for menor que 25
                 elif imc < 30:
                     diagnostico.value = "Você está com sobrepeso!"
-                    diagnostico.color = ft.Colors.GREEN # muda a cor do texto para vermelho se o IMC for maior que 25
+                    diagnostico.color = ft.Colors.YELLOW # muda a cor do texto para vermelho se o IMC for maior que 25
                 elif imc < 35:
                     diagnostico.value = "Você está com obesidade!"
-                    diagnostico.color = ft.Colors.YELLOW # muda a cor do texto para vermelho se o IMC for maior que 30
+                    diagnostico.color = ft.Colors.ORANGE # muda a cor do texto para vermelho se o IMC for maior que 30
                 elif imc < 40:
                     diagnostico.value = "Você está com obesidade severa!"
-                    diagnostico.color = ft.Colors.ORANGE # muda a cor do texto para vermelho se o IMC for maior que 35
+                    diagnostico.color = ft.Colors.RED # muda a cor do texto para vermelho se o IMC for maior que 35
                 else:
                     diagnostico.value = "Você está com obesidade mórbida!"
-                    diagnostico.color = ft.Colors.RED # muda a cor do texto para vermelho se o IMC for maior que 40
+                    diagnostico.color = ft.Colors.PURPLE # muda a cor do texto para vermelho se o IMC for maior que 40
                 
                 diagnostico.update() # atualiza o texto do diagnóstico
                 page.update() # atualiza a página para refletir as mudanças

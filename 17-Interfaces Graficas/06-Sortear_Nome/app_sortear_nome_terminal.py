@@ -27,7 +27,6 @@ try:
             case '1':
                 os.system('cls') # Limpa a tela do terminal
                 while True:
-                    os.system('cls') # Limpa a tela do terminal
                     print("0 - Voltar ao menu principal")
                     print("1 - Inserir nome")
                     opcao_inserir = input("Escolha uma opção: ")
